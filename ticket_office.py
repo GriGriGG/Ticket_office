@@ -1,13 +1,17 @@
+kids = 0
+young = 990
+adults = 1390
+
 tickets = 0
 qnt = int(input("Enter quantity of tickets:\n"))
 for age in range(qnt):
     age = int(input("Enter visitor age:\n"))
     if age < 18:
-        tickets = qnt + 0
+        tickets = qnt + kids
     elif age >= 18 and age <= 25:
-        tickets = qnt + 990
+        tickets = qnt + young
     elif age > 25:
-        tickets = qnt + 1390
+        tickets = qnt + adults
 if tickets == 0:
     print("Come on, kids!")
 
