@@ -1,45 +1,30 @@
-qnt = int(input("Введите количество билетов:\n"))
-# Запрос количества билетов у пользователя
+qnt = int(input("Enter quantity of tickets:\n"))
 total_cost = 0
-# Переменная для хранения общей стоимости
 num_adults = 0
-# Переменная для подсчета количества взрослых
 
 for _ in range(qnt):
-    # Цикл для обработки каждого билета
-    age = int(input("Введите возраст посетителя:\n"))
-    # Ввод возраста посетителя
+    age = int(input("Enter visitor age:\n"))
 
     if age < 18:
         continue
-        # Пропустить итерацию цикла, если возраст меньше 18
     elif age >= 18 and age < 25:
         total_cost += 990
         num_adults += 1
-        # Увеличить общую стоимость на 990 рублей и количество взрослых на 1
     else:
         total_cost += 1390
         num_adults += 1
-        # Увеличить общую стоимость на 1390 рублей и количество взрослых на 1
 
 if num_adults == 0:
-    print("Проходите, детки, на конференцию!")
+    print("Come on, kids!")
 else:
-    print("Сумма к оплате без скидки:", total_cost, "руб.")
-    # Вывод информации о сумме к оплате без учета скидки
+    print("The cost of your tickets:", total_cost, "rub.")
 
     if qnt > 3 and num_adults > 0:
         discount = total_cost * 0.1
-        # Вычислить скидку (10% от общей стоимости) только если билетов больше 3 и есть взрослые
-
         total_cost -= discount
-        # Вычесть скидку из общей стоимости
-
         discount_amount = total_cost * 0.1
-        # Вычислить сумму скидки
-        print("Скидка составила:", "%.2f" % discount_amount, "руб.")
-        print("Итого к оплате:", "%.2f" % total_cost, "руб.")
-        # Вывод информации о скидке и общей сумме к оплате
+        print("Discount is:", "%.2f" % discount_amount, "rub.")
+        print("To pay:", "%.2f" % total_cost, "rub.")
     else:
-        print("Итого к оплате:", "%.2f" % total_cost, "руб.")
-        # Вывод информации о сумме к оплате без скидки, если билетов меньше или равно 3
+        print("To pay:", "%.2f" % total_cost, "rub.")
+
